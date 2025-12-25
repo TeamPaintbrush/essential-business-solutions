@@ -29,12 +29,12 @@ export default function Home() {
           maxWidth: '1200px', 
           margin: '0 auto', 
           display: 'grid', 
-          gridTemplateColumns: '1fr', 
+          gridTemplateColumns: 'repeat(2, 1fr)', 
           gap: '3rem', 
           alignItems: 'center', 
           position: 'relative', 
           zIndex: 2 
-        }}>
+        }} className="hero-grid">
           {/* Text Content */}
           <div style={{ color: 'white', zIndex: 2 }}>
             <h1 style={{

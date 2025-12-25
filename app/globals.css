@@ -237,6 +237,10 @@ section {
   margin-bottom: 3rem;
 }
 
+.hero-grid {
+  /* Desktop: 2 columns */
+}
+
 .services-grid-container {
   width: 100%;
   padding: 0;
@@ -406,6 +410,11 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
   button, a.btn, .btn {
     min-height: 48px;
     min-width: 48px;
+  }
+
+  /* Hero Grid - Single column on mobile */
+  .hero-grid {
+    grid-template-columns: 1fr !important;
   }
 
   /* Services Grid - Horizontal Scroll on Mobile */
