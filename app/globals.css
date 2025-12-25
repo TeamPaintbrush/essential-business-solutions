@@ -211,6 +211,22 @@ a:hover {
   }
 }
 
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.error {
+  color: #dc2626;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+  display: block;
+}
+
 section {
   margin-bottom: 3rem;
 }
@@ -220,6 +236,56 @@ section {
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15) !important;
 }
 
+/* Skip to main content link for accessibility */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: #f0d44d;
+  color: #1e293b;
+  padding: 8px;
+  text-decoration: none;
+  z-index: 100;
+  font-weight: 600;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+/* Focus visible states for keyboard navigation */
+a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
+  outline: 3px solid #f0d44d;
+  outline-offset: 2px;
+}
+
+/* Mobile hamburger menu */
+.mobile-menu-button {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  z-index: 1000;
+}
+
+.mobile-menu-button svg {
+  width: 28px;
+  height: 28px;
+  color: white;
+}
+
+.mobile-nav {
+  display: none;
+}
+
+/* Responsive breakpoints */
+@media (max-width: 1024px) {
+  body {
+    font-size: 15px;
+  }
+}
+
 @media (max-width: 768px) {
   .hero {
     padding: 2rem 1rem;
@@ -227,12 +293,115 @@ section {
 
   .hero h1 {
     font-size: 2rem;
+    line-height: 1.2;
   }
 
   h1 { font-size: 2rem; }
   h2 { font-size: 1.5rem; }
+  h3 { font-size: 1.25rem; }
 
   .grid-3 {
     grid-template-columns: 1fr;
+  }
+
+  /* Show mobile menu button */
+  .mobile-menu-button {
+    display: block;
+  }
+
+  /* Hide desktop nav on mobile */
+  .desktop-nav {
+    display: none;
+  }
+
+  /* Mobile navigation overlay */
+  .mobile-nav {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 80%;
+    max-width: 320px;
+    height: 100vh;
+    background: #6db3bb;
+    z-index: 999;
+    transition: left 0.3s ease;
+    overflow-y: auto;
+    padding: 4rem 0 2rem;
+    box-shadow: 2px 0 8px rgba(0, 0, 0, 0.2);
+  }
+
+  .mobile-nav.open {
+    display: block;
+    left: 0;
+  }
+
+  .mobile-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .mobile-nav li {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .mobile-nav a {
+    display: block;
+    padding: 1rem 2rem;
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background 0.2s;
+  }
+
+  .mobile-nav a:hover {
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  /* Mobile overlay */
+  .mobile-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 998;
+  }
+
+  .mobile-overlay.open {
+    display: block;
+  }
+
+  /* Adjust touch targets */
+  button, a.btn, .btn {
+    min-height: 48px;
+    min-width: 48px;
+  }
+
+  /* Stack form inputs */
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    font-size: 16px; /* Prevents zoom on iOS */
+  }
+}
+
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 1.75rem;
+  }
+
+  h1 { font-size: 1.75rem; }
+  h2 { font-size: 1.25rem; }
+
+  .card, .service-card {
+    padding: 1.5rem;
+  }
+
+  .btn {
+    width: 100%;
+    justify-content: center;
   }
 }

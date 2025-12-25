@@ -4,17 +4,17 @@ import { FileText, Briefcase, Calendar, Users, ClipboardCheck, TrendingUp, Star 
 
 export default function Home() {
   return (
-    <main style={{ backgroundColor: 'white' }}>
+    <main id="main-content" style={{ backgroundColor: 'white' }}>
       {/* Hero Section */}
       <section style={{
         backgroundImage: 'url(/images/Wallpaper 4k.png)',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
-        padding: '4rem 2rem',
+        padding: '4rem 1rem',
         position: 'relative',
         overflow: 'hidden'
-      }}>
+      }} aria-label="Hero section">
         {/* Dark overlay for text readability */}
         <div style={{
           position: 'absolute',
@@ -24,12 +24,21 @@ export default function Home() {
           bottom: 0,
           background: 'linear-gradient(135deg, rgba(109, 179, 187, 1) 0%, rgba(240, 212, 77, 0.5) 100%)',
           zIndex: 1
-        }}></div>
-        <div style={{ maxWidth: '1200px', margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '3rem', alignItems: 'center', position: 'relative', zIndex: 2 }}>
-          {/* Left Column - Text Content */}
+        }} aria-hidden="true"></div>
+        <div style={{ 
+          maxWidth: '1200px', 
+          margin: '0 auto', 
+          display: 'grid', 
+          gridTemplateColumns: '1fr', 
+          gap: '3rem', 
+          alignItems: 'center', 
+          position: 'relative', 
+          zIndex: 2 
+        }}>
+          {/* Text Content */}
           <div style={{ color: 'white', zIndex: 2 }}>
             <h1 style={{
-              fontSize: '3.5rem',
+              fontSize: 'clamp(2rem, 5vw, 3.5rem)',
               fontWeight: '700',
               lineHeight: '1.1',
               marginBottom: '1.5rem',
@@ -40,7 +49,7 @@ export default function Home() {
               Excel Last
             </h1>
             <p style={{
-              fontSize: '1.1rem',
+              fontSize: 'clamp(1rem, 2vw, 1.1rem)',
               lineHeight: '1.6',
               marginBottom: '2rem',
               opacity: 0.95,
@@ -48,7 +57,7 @@ export default function Home() {
             }}>
               Reliable Administrative Services, Business Management, and Event Coordination Transform Your Operations. With Locations Nationwide, We Are Your One-Stop Shop For Complete Business Solutions.
             </p>
-            <div style={{ display: 'flex', gap: '1rem', marginBottom: '2rem' }}>
+            <div style={{ display: 'flex', gap: '1rem', marginBottom: '2rem', flexWrap: 'wrap' }}>
               <Link href="/booking" style={{
                 backgroundColor: '#f0d44d',
                 color: '#1e293b',
@@ -58,7 +67,7 @@ export default function Home() {
                 textDecoration: 'none',
                 display: 'inline-block',
                 boxShadow: '0 4px 6px rgba(0,0,0,0.2)'
-              }}>BOOK NOW</Link>
+              }} aria-label="Book a consultation now">BOOK NOW</Link>
               <Link href="/contact" style={{
                 backgroundColor: 'transparent',
                 color: 'white',
@@ -68,7 +77,7 @@ export default function Home() {
                 textDecoration: 'none',
                 display: 'inline-block',
                 border: '2px solid white'
-              }}>GET A FREE QUOTE</Link>
+              }} aria-label="Get a free quote">GET A FREE QUOTE</Link>
             </div>
             {/* Badges */}
             <div style={{ display: 'flex', gap: '1.5rem', alignItems: 'center', flexWrap: 'wrap' }}>
