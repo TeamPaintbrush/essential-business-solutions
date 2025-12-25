@@ -143,12 +143,8 @@ export default function Home() {
 
       {/* Services Grid */}
       <section style={{ padding: '0rem 2rem 6rem 2rem', backgroundColor: '#f8fafc' }}>
-        <div style={{ width: '100%', padding: '0 0rem' }}>
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(6, 1fr)',
-            gap: '2.5rem'
-          }}>
+        <div className="services-grid-container">
+          <div className="services-grid">
             {[
               { icon: FileText, title: 'Administrative', color: '#64748b' },
               { icon: Briefcase, title: 'Business Management', color: '#6db3bb' },

@@ -237,6 +237,28 @@ section {
   margin-bottom: 3rem;
 }
 
+.services-grid-container {
+  width: 100%;
+  padding: 0;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 2.5rem;
+}
+
+.services-grid-container {
+  width: 100%;
+  padding: 0;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 2.5rem;
+}
+
 .service-card-hover:hover {
   transform: translateY(-4px);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15) !important;
@@ -384,6 +406,25 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
   button, a.btn, .btn {
     min-height: 48px;
     min-width: 48px;
+  }
+
+  /* Services Grid - Horizontal Scroll on Mobile */
+  .services-grid-container {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding: 0 1rem;
+    margin: 0 -2rem;
+  }
+  
+  .services-grid {
+    display: flex;
+    gap: 1rem;
+    width: max-content;
+  }
+  
+  .services-grid > a {
+    min-width: 200px;
+    flex-shrink: 0;
   }
 
   /* Stack form inputs */
